@@ -1,98 +1,117 @@
+// Definindo constantes
+const SCORE_PER_QUESTION = 100;
 const MAX_QUESTIONS = 4;
-const POINTS = 100;
 
 // Acessando objetos do HTML
-const question = document.querySelectorAll('.choice-text');
-const choices = Array.from(document.querySelector('#progressText'));
+const question = document.querySelector('#question');
+const choices = Array.from(document.querySelectorAll('.choice-text'));
+const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
-const progressBarFull = document.querySelector('#progressBarFull');
+const progressBar = document.querySelector('#progressBar');
 
-// Construtor
-function Game() {
-	// Variavel de controle
-	this.acceptingAnswers = true;
+// Variaveis de controle do jogo
+let currentQuestion = {};
+let isAcceptiongAnswers = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
 
-	// Array de perguntas
-	this.questions = {
-		{
-			question: "Quanto eh 2 + 2?",
-			choice1: "1",
-			choice2: "2",
-			choice3: "3",
-			choice4: "4",
-		},
-		{
-			question: "Blablabla?",
-			choice1: "1",
-			choice2: "2",
-			choice3: "3",
-			choice4: "4",
-		},
+// Questoes do quizz
+let questions = [
+	{
+        question: 'What is 2 + 2?',
+        choice1: '2',
+        choice2: '4',
+        choice3: '21',
+        choice4: '17',
+        answer: 2,
+    },
+    {
+        question:"The tallest building in the world is located in which city?",
+        choice1: "Dubai",
+        choice2: "New York",
+        choice3: "Shanghai",
+        choice4: "None of the above",
+        answer: 1,
+    },
+    {
+        question: "What percent of American adults believe that chocolate milk comes from brown cows?",
+        choice1: "20%",
+        choice2: "18%",
+        choice3: "7%",
+        choice4: "33%",
+        answer: 3,
+    },
+    {
+        question: "Approximately what percent of U.S. power outages are caused by squirrels?",
+        choice1: "10-20%",
+        choice2: "5-10%",
+        choice3: "15-20%",
+        choice4: "30%-40%",
+        answer: 1,
+    }
+];
+
+// Logica do jogo
+start = () => {
+	questionCounter = 0;
+	score = 0;
+	availableQuestions = [...questions];
+	getNextQuestion();
+};
+
+getNextQuestion = () => {
+	// Condicoes para encerrar o jogo
+	if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
+		// Salva a pontuacao no local storage
+		localStorage.setItem('lastScore', score);
+
+		return window.location.assign('./end.html');
 	}
 
-	// Estados do jogo
-	this.score = 0;
-	this.questionCounter = 0;
-	this.currentQuestion = {};
-	this,availableQuestions = [];
-}
+	questionCounter++;
+	progressText.innerText = `Questão ${questionCounter} of ${MAX_QUESTIONS}`;
+	progressBar.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+	
+	const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+	currentQuestion = availableQuestions[questionIndex];
+	question.innerText = currentQuestion.question;
 
-// Funcao principal que inicializa o jogo
-Game.prototype.start = () => {
-	this.questionCounter = 0;
-	this.score = 0;
-	availableQuestions = [...this.questions];
-	this.getNewQuestion();
+	choices.forEach(choice => {
+		const number = choice.dataset['number'];
+		choice.innerText = currentQuestion['choice' + number];
+	});
+
+	availableQuestions.splice(questionIndex, 1);
+
+	isAcceptiongAnswers = true;
 };
 
-Game.prototype.getNewQuestion = () => {
-				// Condicoes para encerrar o jogo
-				if (this.availableQuestions.length === 0 || this.questionCounter > MAX_QUESTIONS) {
-					localStorage.setItem('lastScore', score);
+choices.forEach(choice => {
+	choice.addEventListener('click', choice => {
+		if (!isAcceptiongAnswers) return;
 
-					return window.location.assign('/end.html');
-				}
-
-				this.questionCounter++;
-				progressText.innerText = `Questão ${this.questionCounter} of ${MAX_QUESTIONS}`;
-				progressBarFull.style.width = `${(this.questionCounter / MAX_QUESTIONS) * 100}%`;
-
-				const questionIndex = Math.floor(Math.random() * this.availableQuestions.length);
-				this.currentQuestion = this.availableQuestions[questionIndex];
-				question.innerText = this.currentQuestion.question;
-
-				choices.forEach(choice => {
-					const number = choice.dataset['number'];
-					choice.innerText = this.currentQuestion['choice' + number];
-				});
-
-				this.availableQuestions.splice(questionIndex, 1);
-
-				this.acceptingAnswers = true;
-};
-
-Game.prototype.choices.forEach(choice => {
-	choice.addEventListener('click', e => {
-		if (!this.acceptingAnswers) return;
-
-		this.acceptingAnswers = false;
-		const selectedChoice = e.target;
+		isAcceptiongAnswers = false;
+		const selectedChoice = choice.target;
 		const selectedAnswer = selectedChoice.dataset['number'];
 
-		let classToAply = selectedAnswer == this.currentQuestion.answer ? 'correct' : 'incorrect';
+		let styleToAply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
-		if (classToAply == 'correct') this.incrementScore(POINTS);
+		if (styleToAply == 'correct') 
+			incrementScore(SCORE_PER_QUESTION);
 
-		selectedChoice.parentElement.classList.add(classToAply);
-		
+		selectedChoice.parentElement.classList.add(styleToAply);
+
 		setTimeout(() => {
-			selectedChoice.parentElement.classList.remove(classToApply);
-			this.getNewQuestion();
-		}, 100);
+			selectedChoice.parentElement.classList.remove(styleToAply);
+			getNextQuestion();
+		}, 500)
 	})
 });
 
-Game.prototype.incrementScore = number => {
-	this.score += number;
-	scoreText.innerText = this.score;
+incrementScore = number => {
+	score += number;
+	scoreText.innerText = score;
 };
+
+start();
