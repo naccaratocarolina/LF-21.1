@@ -1,5 +1,5 @@
 :root {
-	background-color: #800080;
+	background-color: #111111;
 }
 
 *{
@@ -11,13 +11,28 @@
 
 h1 {
 	font-size: 5.4rem;
-  color: #fff;
+  color: #FFFFFF;
   margin-bottom: 5rem;
 }
 
 h2 {
 	font-size: 4.2rem;
 	margin-bottom: 4rem;
+	color: #FFFFFF;
+}
+
+h3 {
+	font-size: 3rem;
+	margin-bottom: 2.8rem;
+	color: #FFFFFF;
+}
+
+p {
+	font-size: 2.5rem;
+	margin-bottom: 2.3rem;
+	color: #FFFFFF;
+	text-align: justify;
+  text-justify: inter-word;
 }
 
 .container {
@@ -85,4 +100,42 @@ h2 {
 
 #highscore-btn:hover {
     box-shadow: 0 0.4rem 1.4rem 0 rgba(255,255,0,0.5)
+}
+
+/* CSS da pagina de Highscores */
+.end-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 20rem;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+#username {
+    margin-bottom: 3rem;
+    width: 100%;
+    outline: none;
+}
+
+#end-text {
+    font-size: 2.4rem;
+    color: #fff;
+    text-align: center;
+}
+
+#saveScoreBtn {
+    border: none;
 }
