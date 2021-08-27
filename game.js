@@ -19,58 +19,40 @@ let availableQuestions = [];
 // Questoes do quizz
 let questions = [
 	{
-  	 question: 'What is 2 + 2?',
-     choice1: '2',
-     choice2: '4',
-     choice3: '21',
-     choice4: '17',
-     answer: 2,
-		 explanation: 'aasdsad' 
-  },
-  {
-  	 question:"The tallest building in the world is located in which city?",
-     choice1: "Dubai",
-     choice2: "New York",
-     choice3: "Shanghai",
-     choice4: "None of the above",
+  	 question: 'Por definição, um Autômato finito e determinístico é composto por uma 5-upla de elementos. Quais são eles?',
+     choice1: 'Conjunto finito de estados, conjunto finito de símbolos, estado inicial, conjunto de estados finais e função de transição',
+     choice2: 'Conjunto infinito de estados, conjunto infinito de símbolos, estado inicial, conjunto de estados finais e função de transição',
+     choice3: 'Conjunto finito de estados, conjunto finito de símbolos, estado inicial, conjunto de estados finais e função de definição',
+     choice4: 'Conjunto finito de estados, conjunto infinito de símbolos, estado inicial, conjunto de estados finais e função de definição',
      answer: 1,
-		 explanation: '12213123'
+		 explanation: 'O termo “autômato” vem da palavra grega “αὐτόματα” que implica “ação própria”. Um autômato (autômato no plural) é uma máquina autopropelida abstrata que segue uma seqüência predeterminada de operações automaticamente.\n\nUm autômato finito determinístico (DFA) é definido como uma 5-upla (Q, Σ, δ, s, F) consistindo em\n\nUm conjunto finito Q (o conjunto de estados)\nUm conjunto finito de símbolos Σ (o alfabeto de entrada)\nUm estado inicial q0 ∈ Q (o estado inicial)\nUm conjunto de estados de aceitação F (conjunto de estados finais)\nUma função de transição δ: Q × Σ → Q mapeando o estado atual q ∈ Q e o símbolo de entrada a ∈ Σ para um novo estado δ (q, a) ∈ Q/\n\nUm DFA é um modelo matemático de um dispositivo computacional simples que lê uma string de símbolos sobre o alfabeto de entrada Σ e aceita ou rejeita a string de entrada. Gostaríamos de transformar essa definição matemática em um programa funcional, para que possamos executar DFAs em nosso computador.' 
   },
   {
-     question: "What percent of American adults believe that chocolate milk comes from brown cows?",
-     choice1: "20%",
-     choice2: "18%",
-     choice3: "7%",
-     choice4: "33%",
+  	 question:"Marque a opção que não corresponde a uma aplicação dos Autômatos finitos e determinísticos",
+     choice1: "Concepção da análise lexical de um compilador",
+     choice2: "Reconhecer os padrões usando expressões regulares",
+     choice3: "Para resolver qualquer problema recursivamente enumerável",
+     choice4: "Implementação de verificadores ortográficos",
      answer: 3,
-		 explanation: 'pqpqpqpq'
+		 explanation: 'Algumas aplicações dos DFA são\n\nConcepção da análise lexical de um compilador: Algoritmos para converter expressões regulares são conhecidos e podem ser reaproveitados, assim, of DFAs podem ser usados como  um analisador léxico bastante eficiente\n\nReconhecer os padrões usando expressões regulares: Todas as expressões regulares são DFAs (e vice-versa). É uma boa maneira de escrever padrões simples, como essa sequência de caracteres é um número ou o nome de algo (um identificador)\n\nImplementação de verificadores ortográficos: Uma maneira muito eficiente de se implementar verificadores ortograficos é o uso de automatos finitos determinısticos acıclicos mınimos\n\nDentre outras\n\nA opção incorreta na verdade é uma aplicação das Máquinas de Turing'
   },
   {
-     question: "Approximately what percent of U.S. power outages are caused by squirrels?",
-     choice1: "10-20%",
-     choice2: "5-10%",
-     choice3: "15-20%",
-     choice4: "30%-40%",
-     answer: 1,
-		 explanation: '123was'
+     question: "O que o termo determinístico dos Autômatos finitos e determinísticos significa?",
+     choice1: "Cada sequência de estado é única",
+     choice2: "Há um número limitado de estados possíveis que podem ser alcançados",
+     choice3: "Cada sequência de estado é única e há um número limitado de estados possíveis que podem ser alcançados",
+     choice4: "Independente da string de entrada, sempre retorna um valor pré determinado",
+     answer: 3,
+		 explanation: 'Autômatos finitos determinísticos (ou DFA) são máquinas de estado finito que aceitam ou rejeitam sequências de caracteres analisando-os por meio de uma sequência determinada exclusivamente por cada string (palavra).\n\nO termo "determinístico" se refere ao fato de que cada string e, portanto, cada sequência de estado, é única. Em um DFA, uma sequência de símbolos é analisada por meio de um autômato do DFA e cada símbolo de entrada se moverá para o próximo estado que pode ser determinado.\n\nEssas máquinas são chamadas de finitas porque há um número limitado de estados possíveis que podem ser alcançados. Um autômato finito só é chamado de determinístico se puder cumprir ambas as condições.'
   },
   {
-     question: "Pergunta extra",
-     choice1: "a",
-     choice2: "b",
-     choice3: "c",
-     choice4: "d",
-     answer: 1,
-		 explanation: 'aaaaaaaaaaa'
-  },
-  {
-     question: "Pergunta extra 2",
-     choice1: "a",
-     choice2: "b",
-     choice3: "c",
-     choice4: "d",
+     question: "Marque a opção que não corresponde a uma limitação de autômatos finitos determinísticos",
+     choice1: "Só pode receber uma entrada finita",
+     choice2: "Não existe um autômato finito que reconheça o conjunto de sequências binárias consistindo em um número igual de 1 e 0",
+     choice3: "Possui memória finita",
+     choice4: " Fácil determinação da acessibilidade de um estado",
      answer: 4,
-		 explanation: 'bbbbbbbbb'
+		 explanation: '123was'
   },
 ];
 
