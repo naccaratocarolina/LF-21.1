@@ -34,25 +34,16 @@ let questions = [
      choice3: "Para resolver qualquer problema recursivamente enumerável",
      choice4: "Implementação de verificadores ortográficos",
      answer: 3,
-		 explanation: 'Algumas aplicações dos DFA são\n\nConcepção da análise lexical de um compilador: Algoritmos para converter expressões regulares são conhecidos e podem ser reaproveitados, assim, of DFAs podem ser usados como  um analisador léxico bastante eficiente\n\nReconhecer os padrões usando expressões regulares: Todas as expressões regulares são DFAs (e vice-versa). É uma boa maneira de escrever padrões simples, como essa sequência de caracteres é um número ou o nome de algo (um identificador)\n\nImplementação de verificadores ortográficos: Uma maneira muito eficiente de se implementar verificadores ortograficos é o uso de automatos finitos determinısticos acıclicos mınimos\n\nDentre outras\n\nA opção incorreta na verdade é uma aplicação das Máquinas de Turing'
+		 explanation: 'Algumas aplicações dos DFA são\n\nConcepção da análise lexical de um compilador: Algoritmos para converter expressões regulares são conhecidos e podem ser reaproveitados, assim, of DFAs podem ser usados como  um analisador léxico bastante eficiente\n\nReconhecer os padrões usando expressões regulares: AFDs reconhecem exatamente o conjunto de Linguagens Regulares que são, dentre outras coisas, úteis para a realização de análise léxica e reconhecimento de padrões\n\nImplementação de verificadores ortográficos: Uma maneira muito eficiente de se implementar verificadores ortograficos é o uso de automatos finitos determinısticos acıclicos mınimos\n\nDentre outras\n\nA opção incorreta na verdade é uma aplicação das Máquinas de Turing'
   },
   {
-     question: "O que o termo determinístico dos Autômatos finitos e determinísticos significa?",
+     question: "O que o termo “determinístico” de Autômato finito e determinístico significa?",
      choice1: "Cada sequência de estado é única",
      choice2: "Há um número limitado de estados possíveis que podem ser alcançados",
      choice3: "Cada sequência de estado é única e há um número limitado de estados possíveis que podem ser alcançados",
      choice4: "Independente da string de entrada, sempre retorna um valor pré determinado",
      answer: 3,
 		 explanation: 'Autômatos finitos determinísticos (ou DFA) são máquinas de estado finito que aceitam ou rejeitam sequências de caracteres analisando-os por meio de uma sequência determinada exclusivamente por cada string (palavra).\n\nO termo "determinístico" se refere ao fato de que cada string e, portanto, cada sequência de estado, é única. Em um DFA, uma sequência de símbolos é analisada por meio de um autômato do DFA e cada símbolo de entrada se moverá para o próximo estado que pode ser determinado.\n\nEssas máquinas são chamadas de finitas porque há um número limitado de estados possíveis que podem ser alcançados. Um autômato finito só é chamado de determinístico se puder cumprir ambas as condições.'
-  },
-  {
-     question: "Marque a opção que não corresponde a uma limitação de autômatos finitos determinísticos",
-     choice1: "Só pode receber uma entrada finita",
-     choice2: "Não existe um autômato finito que reconheça o conjunto de sequências binárias consistindo em um número igual de 1 e 0",
-     choice3: "Possui memória finita",
-     choice4: " Fácil determinação da acessibilidade de um estado",
-     answer: 4,
-		 explanation: '123was'
   },
 ];
 
