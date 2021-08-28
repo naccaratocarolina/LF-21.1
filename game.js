@@ -45,6 +45,15 @@ let questions = [
      answer: 3,
 		 explanation: 'Autômatos finitos determinísticos (ou DFA) são máquinas de estado finito que aceitam ou rejeitam sequências de caracteres analisando-os por meio de uma sequência determinada exclusivamente por cada string (palavra).\n\nO termo "determinístico" se refere ao fato de que cada string e, portanto, cada sequência de estado, é única. Em um DFA, uma sequência de símbolos é analisada por meio de um autômato do DFA e cada símbolo de entrada se moverá para o próximo estado que pode ser determinado.\n\nEssas máquinas são chamadas de finitas porque há um número limitado de estados possíveis que podem ser alcançados. Um autômato finito só é chamado de determinístico se puder cumprir ambas as condições.'
   },
+  {
+     question: "Sobre as condições em que uma palavra é aceita (ou não) por um AFD, podemos afirmar que",
+     choice1: "AFDs sempre aceitam a palavra vazia",
+     choice2: "AFDs sempre reconhecem a linguagem vazia",
+     choice3: "Se o AFD, ao terminar de processar uma palavra, estiver em um estado que pertence ao conjunto de estados finais, a palavra é aceita",
+     choice4: "Um AFD nunca trava, mesmo ao processar palavras rejeitadas",
+     answer: 4,
+		 explanation: 'O estado em que a máquina pára, após ter processado a palavra de entrada, pode ser o estado final, e neste caso a palavra é aceita; ou pode ser qualquer outro estado de Q, e então a palavra é rejeitada. Um AFD aceita uma palavra se ao terminar de processar a palavra estiver num estado que pertence ao conjunto de estados finais. Um AFD não aceita uma palavra se ao terminar de processar a palavra estiver num estado que não pertence ao conjunto de estados finais ou se durante o processamento lê um símbolo da palavra de entrada para o qual não existe transição no estado em que se encontra.\n\nUm AF pode ter nenhum, um ou vários estados de aceitação. Se o estado inicial é também um estado de aceitação, então a máquina também aceita a palavra vazia, porem não são todos os casos em que isso ocorre. Portanto, não podemos afirmar que os AFDs sempre aceitam a palavra vazia.\n\nSe A é o conjunto de todas as palavras que a máquina M aceita, dizemos que A é a linguagem da máquina M e escrevemos L(M) = A; dizemos que M reconhece A. Uma máquina aceita muitas palavras, mas apenas uma linguagem. Se uma máquina não aceita nenhuma palavra, esta reconhece a linguagem vazia - e somente neste caso essa afirmação é verdadeira.'
+  },
 ];
 
 /* Funcao que inicializa o jogo  */
