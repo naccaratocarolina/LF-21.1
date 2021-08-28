@@ -1,5 +1,5 @@
 # Automata Quiz | LF
-Neste repositório você vai encontrar um jogo desenvolvido para a disciplina de Linguagens Formais (2021.1) com o objetivo de ser um "objeto de aprendizagem" sobre Autômatos Finitos e Determinísticos.
+Neste repositório você vai encontrar um jogo desenvolvido para a disciplina de Linguagens Formais (2021.1) com o objetivo de ser um "objeto de aprendizagem" sobre Autômatos Finitos Determinísticos.
 
 ## Tecnologias utilizadas
 ![Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -16,7 +16,7 @@ git clone https://github.com/naccaratocarolina/automata-quiz-js.git
 Abra o arquivo ```index.html``` no browser de sua preferência
 
 ## Sobre o jogo
-O Automata Quiz é um jogo de perguntas e respostas sobre os Autômatos Finitos e Determinísticos estudados na disciplina. O objtivo do jogo é acertar o máximo de perguntas possíveis, obtendo uma pontuação correspondente. Além disso, também é possível jogar com os amigos e ver quem consegue adquirir a maior pontuação, que podem ser salvas na pagina ```highscores.html.``` 
+O Automata Quiz é um jogo de perguntas e respostas sobre os Autômatos Finitos Determinísticos estudados na disciplina. O objtivo do jogo é acertar o máximo de perguntas possíveis, obtendo uma pontuação correspondente. Além disso, também é possível jogar com os amigos e ver quem consegue adquirir a maior pontuação, que podem ser salvas na pagina ```highscores.html``` 
 
 Se o usuário responder alguma pergunta de forma incorreta, um pop-up aparace, apresentando a explicação descrevendo a resposta correta. 
 

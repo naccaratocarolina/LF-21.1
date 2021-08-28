@@ -19,25 +19,25 @@ let availableQuestions = [];
 // Questoes do quizz
 let questions = [
 	{
-  	 question: 'Por definição, um Autômato finito e determinístico é composto por uma 5-upla de elementos. Quais são eles?',
+  	 question: 'Por definição, um Autômato finito determinístico é composto por uma 5-upla de elementos. Quais são eles?',
      choice1: 'Conjunto finito de estados, conjunto finito de símbolos, estado inicial, conjunto de estados finais e função de transição',
      choice2: 'Conjunto infinito de estados, conjunto infinito de símbolos, estado inicial, conjunto de estados finais e função de transição',
      choice3: 'Conjunto finito de estados, conjunto finito de símbolos, estado inicial, conjunto de estados finais e função de definição',
-     choice4: 'Conjunto finito de estados, conjunto infinito de símbolos, estado inicial, conjunto de estados finais e função de definição',
+     choice4: 'Conjunto finito de estados, conjunto finito de símbolos, conjunto de estados iniciais, conjunto de estados finais e função de transição',
      answer: 1,
-		 explanation: 'O termo “autômato” vem da palavra grega “αὐτόματα” que implica “ação própria”. Um autômato (autômato no plural) é uma máquina autopropelida abstrata que segue uma seqüência predeterminada de operações automaticamente.\n\nUm autômato finito determinístico (DFA) é definido como uma 5-upla (Q, Σ, δ, s, F) consistindo em\n\nUm conjunto finito Q (o conjunto de estados)\nUm conjunto finito de símbolos Σ (o alfabeto de entrada)\nUm estado inicial q0 ∈ Q (o estado inicial)\nUm conjunto de estados de aceitação F (conjunto de estados finais)\nUma função de transição δ: Q × Σ → Q mapeando o estado atual q ∈ Q e o símbolo de entrada a ∈ Σ para um novo estado δ (q, a) ∈ Q/\n\nUm DFA é um modelo matemático de um dispositivo computacional simples que lê uma string de símbolos sobre o alfabeto de entrada Σ e aceita ou rejeita a string de entrada. Gostaríamos de transformar essa definição matemática em um programa funcional, para que possamos executar DFAs em nosso computador.' 
+		 explanation: 'O termo “autômato” vem da palavra grega “αὐτόματα” que implica “ação própria”. Um autômato  é uma máquina autopropelida abstrata que segue uma seqüência predeterminada de operações automaticamente.\n\nUm autômato finito determinístico (DFA) é definido como uma 5-upla (Q, Σ, δ, s, F) consistindo em\n\nUm conjunto finito Q (o conjunto de estados)\nUm conjunto finito de símbolos Σ (o alfabeto de entrada)\nUm estado inicial q0 ∈ Q (o estado inicial)\nUm conjunto de estados de aceitação F (conjunto de estados finais)\nUma função de transição δ: Q × Σ → Q mapeando o estado atual q ∈ Q e o símbolo de entrada a ∈ Σ para um novo estado δ (q, a) ∈ Q\n\nUm DFA é um modelo matemático de um dispositivo computacional simples que lê uma string de símbolos sobre o alfabeto de entrada Σ e aceita ou rejeita a string de entrada..' 
   },
   {
-  	 question:"Marque a opção que não corresponde a uma aplicação dos Autômatos finitos e determinísticos",
+  	 question:"Marque a opção que não corresponde a uma aplicação dos Autômatos finitos determinísticos",
      choice1: "Concepção da análise lexical de um compilador",
-     choice2: "Reconhecer os padrões usando expressões regulares",
+     choice2: "Reconhecer padrões usando expressões regulares",
      choice3: "Para resolver qualquer problema recursivamente enumerável",
      choice4: "Implementação de verificadores ortográficos",
      answer: 3,
-		 explanation: 'Algumas aplicações dos DFA são\n\nConcepção da análise lexical de um compilador: Algoritmos para converter expressões regulares são conhecidos e podem ser reaproveitados, assim, of DFAs podem ser usados como  um analisador léxico bastante eficiente\n\nReconhecer os padrões usando expressões regulares: AFDs reconhecem exatamente o conjunto de Linguagens Regulares que são, dentre outras coisas, úteis para a realização de análise léxica e reconhecimento de padrões\n\nImplementação de verificadores ortográficos: Uma maneira muito eficiente de se implementar verificadores ortograficos é o uso de automatos finitos determinısticos acıclicos mınimos\n\nDentre outras\n\nA opção incorreta na verdade é uma aplicação das Máquinas de Turing'
+		 explanation: 'Algumas aplicações dos DFA são\n\nConcepção da análise lexical de um compilador: Algoritmos para converter expressões regulares são conhecidos e podem ser reaproveitados, assim, os DFAs podem ser usados como  um analisador léxico bastante eficiente\n\nReconhecer padrões usando expressões regulares: AFDs reconhecem exatamente o conjunto de Linguagens Regulares que são, dentre outras coisas, úteis para a realização de análise léxica e reconhecimento de padrões\n\nImplementação de verificadores ortográficos: Uma maneira muito eficiente de se implementar verificadores ortograficos é o uso de automatos finitos determinısticos acıclicos mınimos\n\nDentre outras\n\nA opção incorreta na verdade é uma aplicação das Máquinas de Turing'
   },
   {
-     question: "O que o termo “determinístico” de Autômato finito e determinístico significa?",
+     question: "O que o termo “determinístico” de Autômato finito determinístico significa?",
      choice1: "Cada sequência de estado é única",
      choice2: "Há um número limitado de estados possíveis que podem ser alcançados",
      choice3: "Cada sequência de estado é única e há um número limitado de estados possíveis que podem ser alcançados",
@@ -46,13 +46,13 @@ let questions = [
 		 explanation: 'Autômatos finitos determinísticos (ou DFA) são máquinas de estado finito que aceitam ou rejeitam sequências de caracteres analisando-os por meio de uma sequência determinada exclusivamente por cada string (palavra).\n\nO termo "determinístico" se refere ao fato de que cada string e, portanto, cada sequência de estado, é única. Em um DFA, uma sequência de símbolos é analisada por meio de um autômato do DFA e cada símbolo de entrada se moverá para o próximo estado que pode ser determinado.\n\nEssas máquinas são chamadas de finitas porque há um número limitado de estados possíveis que podem ser alcançados. Um autômato finito só é chamado de determinístico se puder cumprir ambas as condições.'
   },
   {
-     question: "Sobre as condições em que uma palavra é aceita (ou não) por um AFD, podemos afirmar que",
-     choice1: "AFDs sempre aceitam a palavra vazia",
-     choice2: "AFDs sempre reconhecem a linguagem vazia",
-     choice3: "Se o AFD, ao terminar de processar uma palavra, estiver em um estado que pertence ao conjunto de estados finais, a palavra é aceita",
-     choice4: "Um AFD nunca trava, mesmo ao processar palavras rejeitadas",
-     answer: 4,
-		 explanation: 'O estado em que a máquina pára, após ter processado a palavra de entrada, pode ser o estado final, e neste caso a palavra é aceita; ou pode ser qualquer outro estado de Q, e então a palavra é rejeitada. Um AFD aceita uma palavra se ao terminar de processar a palavra estiver num estado que pertence ao conjunto de estados finais. Um AFD não aceita uma palavra se ao terminar de processar a palavra estiver num estado que não pertence ao conjunto de estados finais ou se durante o processamento lê um símbolo da palavra de entrada para o qual não existe transição no estado em que se encontra.\n\nUm AF pode ter nenhum, um ou vários estados de aceitação. Se o estado inicial é também um estado de aceitação, então a máquina também aceita a palavra vazia, porem não são todos os casos em que isso ocorre. Portanto, não podemos afirmar que os AFDs sempre aceitam a palavra vazia.\n\nSe A é o conjunto de todas as palavras que a máquina M aceita, dizemos que A é a linguagem da máquina M e escrevemos L(M) = A; dizemos que M reconhece A. Uma máquina aceita muitas palavras, mas apenas uma linguagem. Se uma máquina não aceita nenhuma palavra, esta reconhece a linguagem vazia - e somente neste caso essa afirmação é verdadeira.'
+     question: "Marque a alternativa que não corresponde a uma limitação dos Autômatos finitos determinísticos",
+     choice1: "Um DFA so pode receber um input finito de caracteres",
+     choice2: "Aceitam somente linguagens regulares",
+     choice3: "Alto desempenho em sistemas de pouca memória",
+     choice4: "Possui memoria finita",
+     answer: 3,
+		 explanation: "O DFAs tem memória finita. Por memória finita, quero dizer que eles não podem armazenar nenhuma informação de comprimento infinito e não possuem nenhuma lembrança de estados processados anteriormente.\n\nUm exemplo muito simples de uma linguagem que não é reconhecida pelos DFAs é o conjunto de cadeias binárias de Os e 1s iguais. Isso ocorre pois, para aceitar uma palavra do idioma acima, o DFA precisa contar o número de 0s vistos. O número de 0s pode ser infinito, pois n não tem limite superior. Portanto, esta linguagem é uma linguagem irregular. Mas se esta linguagem tiver um limite superior, então qualquer palavra do idioma terá comprimento finito e pode ser reconhecida por um DFA (basta fazer esse número de estados no pior caso)\n\nA resposta correta para esta pergunta é “Alto desempenho em sistemas de pouca memória” pois esta é, na verdade, uma vantagem dos DFAs. Os DFAs são particularmente úteis em sistemas de pouca memória, onde realmente só podemos trabalhar com um pequeno número de bits. Encontramos exemplos desses sistemas ao projetar redes de circuitos, uma vez que esses sistemas costumam ter memória muito baixa."
   },
 ];
 
