@@ -21,4 +21,4 @@ O Automata Quiz é um jogo de perguntas e respostas sobre os Autômatos Finitos 
 Se o usuário responder alguma pergunta de forma incorreta, um pop-up aparace, apresentando a explicação descrevendo a resposta correta. 
 
 ## Motivação
-A motivação por traz do Automata Quiz é trazer para o usuário o conceito de AFDs de forma lúdica e descontraida, com uma interface gráfica elegante e de fácil uso. O jogo pode ser considerado um "objeto de aprendizagem" pois não é somente um jogo de perguntas e respostas. Quando o usuário erra alguma pergunta, ele automaticamente tem acesso a descrição e explicação dos conceitos abordados na questão
+A motivação por traz do Automata Quiz é trazer para o usuário o conceito de AFDs de forma lúdica e descontraida, com uma interface gráfica de fácil uso. O jogo pode ser considerado um "objeto de aprendizagem" pois não é somente um jogo de perguntas e respostas. Quando o usuário erra alguma pergunta, ele automaticamente tem acesso a descrição e explicação dos conceitos abordados na questão
